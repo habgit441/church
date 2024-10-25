@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import He from "../public/images/images.jpg"; 
 import olaiya from "../public/images/olaiya.jpg";
-import logo from "../public/images/download.jpg"
+import logo from "../public/images/download.jpg";
 
 const Hero = () => {
   

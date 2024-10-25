@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from "../public/images/download.jpg";
+import Logo from "../public/Images/download.jpg";
 import dynamic from 'next/dynamic';
 const Gallery = dynamic(() => import('../Gallery/page'));
 
@@ -87,6 +87,7 @@ const Navbar = () => {
             <div className="hidden md:flex space-x-4 items-center justify-center mx-auto">
               <Link href="/" className="text-gray-600 hover:text-gray-900">Home</Link>
               <Link href="/Gallery" className="text-gray-600 hover:text-gray-900">Gallery</Link>
+              <Link href="/Event" className="text-gray-600 hover:text-gray-900">Event</Link>
               <Link href="/messages" className="text-gray-600 hover:text-gray-900">Meassage</Link>
 
               <div className="relative dropdown">
@@ -98,10 +99,10 @@ const Navbar = () => {
                 </button>
                 {isOpen && (
                   <div className="absolute mt-2 w-40 bg-white shadow-lg rounded-md z-50">
-                    <Link href="/class1" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Family Class</Link>
-                    <Link href="/class2" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Responsibility Class</Link>
+                    <Link href="/Family" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Family Class</Link>
+                    <Link href="/Responsibility" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Responsibility Class</Link>
                     <Link href="/class3" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Maturity Class</Link>
-                    <Link href="/class3" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Bible study</Link>
+                    <Link href="/Bible" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Bible study</Link>
                   </div>
                 )}
               </div>
@@ -134,6 +135,7 @@ const Navbar = () => {
           <div className="flex flex-col space-y-4">
             <Link href="/" className="text-gray-600 hover:text-gray-900">Home</Link>
             <Link href="/Gallery" className="text-gray-600 hover:text-gray-900">Gallery</Link>
+            <Link href="/Event" className="text-gray-600 hover:text-gray-900">Evemt</Link>
             <Link href="/messages" className="text-gray-600 hover:text-gray-900">messages</Link>
 
             <div className="relative">
@@ -145,10 +147,10 @@ const Navbar = () => {
               </button>
               {isMobileDropdownOpen && (
                 <div className="mt-2 bg-white shadow-lg rounded-md z-50">
-                  <Link href="/class1" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Family Class</Link>
-                  <Link href="/class2" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Responsibility Class</Link>
+                  <Link href="/Family" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Family Class</Link>
+                  <Link href="/Responsibility" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Responsibility Class</Link>
                   <Link href="/class3" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Maturity Class</Link>
-                  <Link href="/class3" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Bible study</Link>
+                  <Link href="/Bible" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Bible study</Link>
                 </div>
               )}
             </div>

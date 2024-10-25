@@ -1,36 +1,23 @@
-"use client";
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 const VideoPage = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Error playing the video:", error);
-      });
-    }
-  }, []);
-
   return (
-    <section className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-      <div className="w-full max-w-5xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-center text-black mb-4">Featured Video</h1>
-        <video
-          ref={videoRef}
-          className="w-full h-auto rounded-lg shadow-md"
-          src="/video/message.mp4"
-          autoPlay
-          loop
-          muted
-          controls
-          preload="auto"
-          onLoadedMetadata={() => console.log("Video loaded")}
-          onError={(e) => console.error("Video error:", e)}
-        />
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="max-w-4xl w-full p-4">
+        <h1 className="text-3xl font-bold text-center mb-6">Responsive Local Video</h1>
+        <div className="relative pb-[56.25%] h-0">
+          <video
+            className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+            controls
+            autoPlay
+            muted
+            src="/videos/message.mp4"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
