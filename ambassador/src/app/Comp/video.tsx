@@ -11,7 +11,7 @@ const VideoPage = () => {
             controls
             autoPlay
             muted
-            src="/videos/message.mp4"
+            src="C:\Users\.habakkuk\Documents\GitHub\church\ambassador\src\app\public\message.mp4"
           >
             Your browser does not support the video tag.
           </video>

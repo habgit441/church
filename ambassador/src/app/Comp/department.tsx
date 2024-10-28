@@ -3,11 +3,11 @@
 import Image from 'next/image';
 
 const departments = [
-  { id: 1, name: "Music Ministry", description: "Worship through music.", image:"/public/images/music.jpg" },
-  { id: 2, name: "Children's Ministry", description: "Teaching children about faith.", image: "/public/images/music.jpg" },
-  { id: 3, name: "Youth Ministry", description: "Empowering the next generation.", image: "/public/images/music.jpg" },
-  { id: 4, name: "Ushering Department", description: "Welcoming members and guests.", image: "/public/images/music.jpg" },
-  { id: 5, name: "Prayer Ministry", description: "Dedicated to intercession.", image: "/public/images/music.jpg" },
+  { id: 1, name: "Music Ministry", description: "Worship through music.", image:"/images/music.jpg" },
+  { id: 2, name: "Children's Ministry", description: "Teaching children about faith.", image: "/images/music.jpg" },
+  { id: 3, name: "Youth Ministry", description: "Empowering the next generation.", image: "/images/music.jpg" },
+  { id: 4, name: "Ushering Department", description: "Welcoming members and guests.", image: "/images/music.jpg" },
+  { id: 5, name: "Prayer Ministry", description: "Dedicated to intercession.", image: "/images/music.jpg" },
 ];
 
 const DepartmentsPage = () => {

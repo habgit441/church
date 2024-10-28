@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Hero from "./Comp/Hero";
+import Hero from "./Hero/Hero";
 import Team from "./Comp/mission";
 import Video from "./Comp/video";
 import Department from "./Comp/department";
