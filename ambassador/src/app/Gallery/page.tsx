@@ -1,77 +1,38 @@
 "use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Logo from "../public/images/olaiya.jpg"; 
-import Olaiya from "../public/images/download.jpg";
-import image from "../public/images/images.jpg";
+import React, { useState } from 'react';
+import Navbar from './navbar';
 
-const galleryCategories = {
-  pastors: Array(30).fill(Olaiya),
-  youth: Array(30).fill(Logo),
-  events: Array(25).fill(image),
+const images = {
+    All: ["/images/music.jpg", "/images/music.jpg", "/images/music.jpg"],
+    Pastor: ["/images/music.jpg", "/images/music.jpg", "/images/music.jpg"],
+    Minister: ["/images/music.jpg", "/images/music.jpg", "/images/music.jpg"],
+    User: [/* Array of user images */],
+    Media: [/* Array of media images */],
 };
 
 const Gallery = () => {
-  const [currentCategory, setCurrentCategory] = useState('all');
+    const [category, setCategory] = useState('All');
+    const displayedImages = category === 'All' ? Object.values(images).flat() : images[category];
 
-  const getImagesForCategory = (category) => {
-    if (category === 'all') {
-      return Object.values(galleryCategories).flat();
-    }
-    return galleryCategories[category] || [];
-  };
-
-  return (
-    <section className="min-h-screen bg-gray-100 pt-32 overflow-hidden"> 
-      <div className="container mx-auto h-full overflow-y-auto pb-20"> 
-       
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-          {getImagesForCategory(currentCategory).map((imageSrc, index) => (
-            <div
-              key={index}
-              className="relative h-60 w-full overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-            >
-              <Image
-                src={imageSrc}
-                alt={`Gallery image ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
-                className="transition-transform duration-300 ease-in-out"
-              />
+    return (
+        <div className="min-h-screen flex flex-col justify-between bg-white text-green-900">
+            {/* Image Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+                {displayedImages.map((image, index) => (
+                    <img 
+                        key={index} 
+                        src={image} 
+                        alt={`Gallery ${category}`} 
+                        className="rounded-lg shadow-md object-contain w-full h-auto"
+                    />
+                ))}
             </div>
-          ))}
-        </div>
 
-        <div className="fixed bottom-4 left-0 w-full flex justify-center space-x-4 z-10"> 
-          <button
-            onClick={() => setCurrentCategory('all')}
-            className={`py-2 px-4 rounded-full ${
-              currentCategory === 'all'
-                ? 'bg-blue-500 text-white'
-                : 'bg-white text-blue-500 border border-blue-500'
-            }`}
-          >
-            All
-          </button>
-
-          {Object.keys(galleryCategories).map((category) => (
-            <button
-              key={category}
-              onClick={() => setCurrentCategory(category)}
-              className={`py-2 px-4 rounded-full ${
-                currentCategory === category
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-white text-blue-500 border border-blue-500'
-              }`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          ))}
+            {/* Bottom Navbar */}
+            <Navbar setCategory={setCategory} />
         </div>
-      </div>
-    </section>
-  );
+    );
 };
 
 export default Gallery;

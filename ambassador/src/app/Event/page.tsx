@@ -2,65 +2,81 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-// import flyer1 from '../public/images/flyer1.jpg';  // Replace with your flyer image
 
 
 const events = [
+
   {
-    id: 1,
+    id: 4321,
+    title: "Prevalling prayers",
+    date: "December 10, 2024",
+    description: "A day of inspiring talks, worship, and fellowship for the youth.",
+    flyer: "/images/music.jpg",
+  },
+
+  {
+    id: 23456,
+    title: "GSA ",
+    date: "December 10, 2024",
+    description: "A day of inspiring talks, worship, and fellowship for the youth.",
+    flyer: "/images/music.jpg",
+  },
+
+  {
+    id: 123,
     title: "Youth Empowerment Conference",
     date: "December 10, 2024",
     description: "A day of inspiring talks, worship, and fellowship for the youth.",
-    // flyer: flyer1,
+    flyer: "/images/music.jpg",
   },
   {
     id: 2,
     title: "Christmas Eve Service",
     date: "December 24, 2024",
     description: "Join us as we celebrate the birth of our Lord Jesus Christ.",
-    // flyer: flyer2,
+    flyer: "/images/music.jpg",
   },
   {
     id: 3,
     title: "New Year's Prayer Vigil",
     date: "December 31, 2024",
     description: "Pray with us as we usher in the new year, seeking God’s blessings.",
-    // flyer: flyer3,
+    flyer: "/images/music.jpg",
   },
   {
     id: 4,
     title: "Easter Celebration Service",
     date: "April 5, 2025",
     description: "Come together to celebrate the resurrection of Christ.",
-    // flyer: flyer4,
+    flyer: "/images/music.jpg",
   },
   {
     id: 5,
     title: "Community Outreach",
     date: "June 10, 2025",
     description: "Serving our community with love and compassion.",
-    // flyer: flyer5,
-  },
+    flyer: "/images/music.jpg",
+    },
   {
     id: 6,
     title: "Family Fun Day",
     date: "July 22, 2025",
     description: "A fun-filled day for the entire family with games, food, and fellowship.",
-    // flyer: flyer6,
+    flyer: "/images/music.jpg",
   },
   {
     id: 7,
     title: "Thanksgiving Service",
     date: "November 25, 2025",
     description: "Join us for a special thanksgiving service.",
-    // flyer: flyer7,
+    flyer: "/images/music.jpg",
   },
   {
     id: 8,
     title: "Church Anniversary",
     date: "October 14, 2025",
     description: "Celebrating the journey and growth of our church.",
-    // flyer: flyer8,
+    flyer: "/images/music.jpg",
   },
 ];
 
@@ -87,13 +103,13 @@ const EventPage = () => {
         Upcoming Events
       </h2>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
         {events.map((event, index) => (
           <div
             key={event.id}
             className={`bg-white p-6 rounded-lg shadow-lg transform transition-all duration-700 ease-out 
               ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"} 
-              delay-${index * 200}`}
+              delay-${index * 500}`}
           >
             {/* Event Flyer */}
             <div className="mb-4">
